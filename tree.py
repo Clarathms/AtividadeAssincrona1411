@@ -35,7 +35,7 @@ def kthSmallest(root):
 	# procura na subárvore esquerda
 	left = kthSmallest(root.left)
 
-    # se o menor for encontrado na subarvore esquerda, retorna
+    # se o menor kth for encontrado na subarvore esquerda, retorna
 	if (left != None):
 		return left
 
@@ -47,15 +47,15 @@ def kthSmallest(root):
     # caso contrário, procura na subarvore direita
 	return kthSmallest(root.right)
 
-# função para encontrar o maior elemento na bst
+# função para encontrar o kth menor elemento na bst
 def printKthSmallest(root):
 
 	res = kthSmallest(root)
 
 	if (res == None):
-		print("There are less than k nodes in the BST")
+		print("Há menos que k nós na BST")
 	else:
-		print("K-th Smallest Element is ", res.data)
+		print("O menor k-th elemento é ", res.data)
 
 # Driver code
 if __name__ == '__main__':
